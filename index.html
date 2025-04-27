@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Анкета поступающего в университет</title>
+    <style> body { font-family: Arial, sans-serif; margin: 20px; } h1 { text-align: center; } form { max-width: 600px; margin: auto; } label { display: block; margin-bottom: 5px; } input[type="text"], select, textarea { width: 100%; padding: 8px; border-radius: 4px; box-sizing: border-box; margin-bottom: 15px; } button { background-color: #4CAF50; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 4px; } button:hover { background-color: #45a049; } </style>
+</head>
+<body>
+    
+<h1>Анкета в техникум</h1>
+
+<form action="/submit.php" method="post">
+    <!-- Личная информация -->
+    <label for="fullName">Фамилия имя отчество:</label>
+    <input type="text" id="fullName" name="fullName" required placeholder="хз,хз,хз">
+
+    <label for="birthDate">Дата рождения:</label>
+    <input type="date" id="birthDate" name="birthDate" required>
+
+    <label for="phoneNumber">Телефон:</label>
+    <input type="tel" id="phoneNumber" name="phoneNumber" pattern="\+8\s?\d{3}\s?\d{3}-\d{2}-\d{2}" title="+7 XXX XXXX-XX-XX" required placeholder="+7 XXX XXXX XX XX">
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required placeholder="хз.ru">
+
+    <!-- Образовательная информация -->
+    <label for="schoolInfo">Среднее образовательное учреждение:</label>
+    <textarea id="schoolInfo" name="schoolInfo" rows="3"></textarea>
+
+    <label for="graduationYear">Год окончания школы:</label>
+    <select id="graduationYear" name="graduationYear" required>
+        <option value="">...</option>
+        <option value="2022">2022</option>
+        <option value="2023">2023</option>
+        <option value="2024">2024</option>
+        <option value="2025">2025</option>
+    </select>
+
+    <!-- Выбор факультета и специальности -->
+    <label for="facultyChoice">Желаемый факультет:</label>
+    <select id="facultyChoice" name="facultyChoice" required>
+        <option value="">...</option>
+        <option value="IT">Информационные технологии</option>
+        <option value="Engineering">Инженерия</option>
+        <option value="Economics">Экономика</option>
+        <option value="Humanities">Гуманитарные науки</option>
+    </select>
+
+    <label for="specialtyChoice">Специальность:</label>
+    <input type="text" id="specialtyChoice" name="specialtyChoice" placeholder="Программирование,и тд" required>
+
+    <!-- Документы -->
+    <label for="uploadDocs">Загрузите скан паспорта:</label>
+    <input type="file" id="uploadDocs" name="uploadDocs" accept="image/*,.pdf">
+
+    <!-- Согласие на обработку персональных данных -->
+    <div style="margin-top: 15px;">
+</html>
